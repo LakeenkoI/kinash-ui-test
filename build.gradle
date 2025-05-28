@@ -21,7 +21,12 @@ dependencies {
     testImplementation(
             'com.codeborne:selenide:7.9.2',
             'org.junit.jupiter:junit-jupiter:5.12.2'
-
-
     )
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
