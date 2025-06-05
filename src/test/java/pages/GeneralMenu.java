@@ -1,7 +1,8 @@
 package pages;
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
@@ -25,13 +26,6 @@ public enum GeneralMenu {
     private final String headText;
 
 
-//    GeneralMenu(String displayName, String headText) {
-//        this.displayName = displayName;
-//        this.headText = headText;
-//    }
 
-//    GeneralMenu(String displayName) {
-//        this.displayName = displayName;
-//    }
 }
 
