@@ -4,9 +4,9 @@ import com.codeborne.selenide.ElementsCollection;
 import lombok.*;
 import org.junit.jupiter.api.Assertions;
 
-import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 @Data
 @Getter
@@ -15,24 +15,10 @@ import static com.codeborne.selenide.Selenide.*;
 @AllArgsConstructor
 
 public class MainPage {
-    /* Описываем класс
-    приватные переменные
-    методы
-    конструкторы
-    аннотации ломбок и овнер
-    */
+
 
     ElementsCollection menuGeneral = $$("ul.menu-general li ");
-    private String generalMenu;
     private String request;
-
-    public void openPage() {
-        open("https://kinash.ru/");
-    }
-
-    public void clickMenu(GeneralMenu generalMenu) {
-        menuGeneral.findBy(text(generalMenu.getDisplayName())).click();
-    }
 
     public void clickMenu(String displayName) {
         menuGeneral.findBy(text(displayName)).click();
@@ -44,7 +30,7 @@ public class MainPage {
     }
 
     public void selectFirstResult() {
-        $("div.kea-products-container > div:first-child a").shouldBe(enabled).click();
+        $("div.kea-products-container > div:first-child a.products-view-name-link").click();
     }
 
     public void checkCardHeadline() {
@@ -84,6 +70,4 @@ public class MainPage {
     public void applyFilter() {
         $("input[value='Применить']").click();
     }
-
-
 }

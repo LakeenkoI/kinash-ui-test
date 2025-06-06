@@ -20,7 +20,7 @@ public enum GeneralMenu {
     ACCESSORIES("Аксессуары", "Спортивные аксессуары"),
     PROMOTIONS("Акции", "Акции - спортивный магазин Kinash Sport"),
     SALE("Распродажа", "Распродажа");
-//    OTHER("Другое");
+
 
     private final String displayName;
     private final String headText;
