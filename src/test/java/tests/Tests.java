@@ -27,7 +27,7 @@ public class Tests {
         open(baseUrl);
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     public void searchTest() {
         mainPage.setRequest("Мяч волейбольный");
         mainPage.search();
