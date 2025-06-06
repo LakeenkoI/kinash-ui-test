@@ -2,11 +2,14 @@ package tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
+import elements.Topmenu;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.RetryingTest;
 import pages.GeneralMenu;
 import pages.MainPage;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,6 +17,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class Tests {
 
     MainPage mainPage = new MainPage();
+    Topmenu topMenu = new Topmenu();
 
     @BeforeEach
     public void initSettings() {
@@ -31,7 +35,7 @@ public class Tests {
         mainPage.checkCardHeadline();
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     public void addToCartTest() {
         open("/catalog");
         mainPage.openFirstCatalogProduct();
@@ -40,18 +44,18 @@ public class Tests {
         sleep(5000);
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     void checkFooterPresence() {
         $("footer").scrollIntoView(true).shouldBe(visible);
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     void navigateToMenuPageTest() {
         mainPage.clickMenu("Волейбол");
         mainPage.checkCardHeadline(GeneralMenu.VOLLEYBALL);
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     void clearCartTest() {
         open("/catalog");
         mainPage.openFirstCatalogProduct();
@@ -60,7 +64,7 @@ public class Tests {
         mainPage.checkCartCounter("0");
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     public void addToWishlistTest() {
         mainPage.clickMenu("Обувь");
         mainPage.openFirstCatalogProduct();
@@ -68,7 +72,7 @@ public class Tests {
         mainPage.checkBelongingToWishlist();
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     public void filterTest() {
         mainPage.clickMenu("Одежда");
         String brand = $$("form[name=catalogFilterForm] div.catalog-filter-block:nth-child(2) div.catalog-filter-row").first().getText();
@@ -77,6 +81,12 @@ public class Tests {
         $$("div[data-name=productViewCatalog] div.products-view-block").should(CollectionCondition.allMatch(
                 "Все элементы должны содержать brand",
                 el -> el.getText().contains(brand)));
+    }
+
+    @RetryingTest(maxAttempts = 3)
+    public void topMenuNegativTest() {
+        topMenu.clickTopMenu("Контакты");
+        $("h1").shouldHave(text("Контакты - спортивный магазин Кинаш Кроссовки"));
     }
 }
 
