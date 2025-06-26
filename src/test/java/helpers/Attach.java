@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.logging.LogType;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,8 +12,6 @@ import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.Selenide.sessionId;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static io.opentelemetry.semconv.trace.attributes.SemanticAttributes.EventDomainValues.BROWSER;
-import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
     @Attachment(value = "{attachName}", type = "image/png")
@@ -33,7 +32,7 @@ public class Attach {
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+                String.join("\n", Selenide.getWebDriverLogs(LogType.BROWSER))
         );
     }
 
