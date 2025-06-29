@@ -1,13 +1,9 @@
 package data;
 
-import com.codeborne.selenide.ElementsCollection;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-import static com.codeborne.selenide.Selenide.$$;
-
+@Getter
 @AllArgsConstructor
 
 public enum GeneralMenuElements {
