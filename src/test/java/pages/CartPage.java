@@ -4,16 +4,18 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CartPage extends BasePage {
 
-    private final SelenideElement addToCartButton = $(".product-page-cart-btn");
-    private final SelenideElement clearCartButton = $(".clear-cart-btn, .btn-clear-cart, .delete-all");
+    private final SelenideElement addToCartButton = $("a.btn.btn-middle.btn-confirm");
+    private final SelenideElement clearCartButton = $(".icon-cancel-circled-before.link-text-decoration-none.cs-l-3");
     private final ElementsCollection productList = $$("div.products-view-block");
+
+    private final SelenideElement goToCartButton = $("a.cart-mini-header");
+
 
     @Step("Кликаем по первому товару в списке")
     public CartPage clickFirstProduct() {
@@ -27,6 +29,12 @@ public class CartPage extends BasePage {
         return this;
     }
 
+    @Step("Переходим в корзину")
+    public CartPage goToCart() {
+        goToCartButton.shouldBe(visible).click();
+        return this;
+    }
+
     @Step("Проверяем, что счетчик корзины показывает {expectedCount}")
     public CartPage checkCartCounterEquals(int expectedCount) {
         cartCounter.shouldHave(text(String.valueOf(expectedCount)));
@@ -35,9 +43,7 @@ public class CartPage extends BasePage {
 
     @Step("Очищаем корзину")
     public CartPage clearCart() {
-        if (clearCartButton.exists() && clearCartButton.isDisplayed()) {
-            clearCartButton.click();
-        }
+        clearCartButton.shouldBe(visible).click();
         return this;
     }
 }
