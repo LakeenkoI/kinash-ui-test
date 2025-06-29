@@ -12,7 +12,7 @@ public class FilterPage extends BasePage {
 
     private final ElementsCollection brandFilters = $$("form[name=catalogFilterForm] div.catalog-filter-block:nth-child(2) div.catalog-filter-row");
     private final ElementsCollection productList = $$("div[data-name=productViewCatalog] div.products-view-block");
-    private final SelenideElement applyFilterBtn = $("button.btn-filter-apply");
+    private final SelenideElement applyFilterBtn = $("input.btn.btn-middle.btn-submit");
 
     @Step("Получение первого бренда из фильтров")
     public String getFirstBrandName() {

@@ -1,23 +1,23 @@
 package tests;
 
+import data.GeneralMenuElements;
+import extensions.Retry;
 import io.qameta.allure.junit5.AllureJunit5;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junitpioneer.jupiter.RetryingTest;
 import pages.FilterPage;
 import pages.MainPage;
 
-import static com.codeborne.selenide.Selenide.open;
-
 @ExtendWith(AllureJunit5.class)
-public class FilterTests {
+public class FilterTests extends BaseTests {
 
     MainPage mainPage = new MainPage();
     FilterPage filterPage = new FilterPage();
-
-    @RetryingTest(maxAttempts = 3)
+    @Retry(3)
+    @Test
     public void filterTest() {
-        open("https://kinash.ru/");
-        mainPage.clickGeneralMenuElements("Одежда");
+        mainPage.clickGeneralMenuElements(GeneralMenuElements.CLOTHING);
         String brand = filterPage.getFirstBrandName();
         filterPage.selectFirstBrand()
                 .applyFilter()
