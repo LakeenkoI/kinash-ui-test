@@ -11,7 +11,7 @@ import pages.ProductCardPage;
 import static com.codeborne.selenide.Selenide.open;
 
 @ExtendWith(AllureJunit5.class)
-public class ProductCardTests extends BaseTests {
+public class ProductCardTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     ProductCardPage productCard = new ProductCardPage();

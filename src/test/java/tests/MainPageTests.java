@@ -8,7 +8,7 @@ import pages.MainPage;
 
 
 @ExtendWith(AllureJunit5.class)
-public class MainPageTests extends BaseTests {
+public class MainPageTests extends TestBase {
 
     @Retry(3)
     @Test

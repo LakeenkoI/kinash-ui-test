@@ -5,12 +5,11 @@ import extensions.Retry;
 import io.qameta.allure.junit5.AllureJunit5;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junitpioneer.jupiter.RetryingTest;
 import pages.FilterPage;
 import pages.MainPage;
 
 @ExtendWith(AllureJunit5.class)
-public class FilterTests extends BaseTests {
+public class FilterTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     FilterPage filterPage = new FilterPage();

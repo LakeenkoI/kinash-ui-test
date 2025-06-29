@@ -9,7 +9,7 @@ import pages.CartPage;
 import pages.MainPage;
 
 @ExtendWith(AllureJunit5.class)
-public class CartTests extends BaseTests {
+public class CartTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     CartPage cartPage = new CartPage();

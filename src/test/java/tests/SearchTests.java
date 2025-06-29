@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 @ExtendWith(AllureJunit5.class)
-public class SearchTests extends BaseTests {
+public class SearchTests extends TestBase {
 
     @ParameterizedTest
     @CsvSource({

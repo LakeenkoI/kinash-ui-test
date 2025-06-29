@@ -5,7 +5,7 @@ import config.Config;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class BaseTests {
+public class TestBase {
 
     @BeforeAll
     static void setup() {
