@@ -4,17 +4,18 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class CartPage extends BasePage {
+public class CartPage  {
 
     private final SelenideElement addToCartButton = $("a.btn.btn-middle.btn-confirm");
     private final SelenideElement clearCartButton = $(".icon-cancel-circled-before.link-text-decoration-none.cs-l-3");
     private final ElementsCollection productList = $$("div.products-view-block");
-
     private final SelenideElement goToCartButton = $("a.cart-mini-header");
+    private final SelenideElement cartCounter = $(".cart-amount-custom");
 
 
     @Step("Кликаем по первому товару в списке")
