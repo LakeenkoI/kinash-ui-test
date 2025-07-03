@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBase {
 
     private static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
-    public static String nikeTShirtUrl = baseUrl + "/products/nike-miler-short-sleave-running-top-futbolka-begovaya-temno-sinii";
+    public static String nikeTShirtUrl = baseUrl + "/products/nike-dri-fit-uv-miler-short-sleave-running-top-futbolka-begovaya-chernyi";
 
     @BeforeAll
     static void setup() {
