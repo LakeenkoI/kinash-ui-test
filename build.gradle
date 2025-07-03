@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'io.freefair.lombok' version "8.10"
     id "io.qameta.allure" version "2.12.0"
+    id 'org.gradle.test-retry' version '1.5.3'
 }
 
 group = 'org.lakeenko'
@@ -12,6 +13,21 @@ repositories {
 }
 
 compileJava.options.encoding = 'UTF-8'
+
+allure {
+    report {
+        version.set("2.24.0")
+    }
+
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.24.0")
+            }
+        }
+    }
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -35,5 +51,50 @@ test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
+    }
+    retry {
+        failOnPassedAfterRetry = false
+        maxRetries = 3
+    }
+}
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+
+    systemProperties += [
+            'junit.jupiter.execution.parallel.enabled'                 : System.getProperty("parallelRun"),
+            'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+            'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+            'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+            'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads", "1").toInteger()
+    ]
+}
+task cart_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Cart"
+    }
+}
+
+task filter_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Filter"
+    }
+}
+
+task main_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Main"
+    }
+}
+
+task product_cart_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "ProductCart"
+    }
+}
+
+task search_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "Search"
     }
 }
