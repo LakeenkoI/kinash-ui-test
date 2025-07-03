@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainPage extends BasePage {
+public class MainPage  {
 
     SelenideElement mainPageTitle = $("div.col-xs-slim div[style]");
     SelenideElement logo = $("#logo");
