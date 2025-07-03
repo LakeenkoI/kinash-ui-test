@@ -8,7 +8,7 @@ public class Config {
     private static final Properties properties = new Properties();
 
     static {
-        String target = System.getProperty("target", "local"); // default to local
+        String target = System.getProperty("target", "local");
         try (FileInputStream fis = new FileInputStream("src/test/resources/" + target + ".properties")) {
             properties.load(fis);
         } catch (IOException e) {
