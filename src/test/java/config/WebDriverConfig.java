@@ -16,7 +16,7 @@ public interface WebDriverConfig extends Config {
         String browserSize();
 
         @Key("browser_version")
-        @DefaultValue("100.0")
+        @DefaultValue("128.0")
         String browserVersion();
 
         @Key("baseUrl")
@@ -28,6 +28,6 @@ public interface WebDriverConfig extends Config {
         Boolean isRemote();
 
         @Key("remoteUrl")
-        @DefaultValue("http://localhost:4444")
+        @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
         String remoteUrl();
 }
