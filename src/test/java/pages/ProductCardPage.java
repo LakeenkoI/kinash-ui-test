@@ -8,9 +8,8 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static org.assertj.core.error.ShouldHave.shouldHave;
 
-public class ProductCardPage extends BasePage {
+public class ProductCardPage {
 
     private final SelenideElement reviewsTab = $("li#tabReviews");
     private final SelenideElement reviewButton = $("a.review-form-btn-add");
