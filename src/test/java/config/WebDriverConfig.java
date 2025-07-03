@@ -16,7 +16,7 @@ public interface WebDriverConfig extends Config {
         String browserSize();
 
         @Key("browser_version")
-        @DefaultValue("138.0")
+        @DefaultValue("128.0")
         String browserVersion();
 
         @Key("baseUrl")
