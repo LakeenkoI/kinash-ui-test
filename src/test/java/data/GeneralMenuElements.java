@@ -5,7 +5,6 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-
 public enum GeneralMenuElements {
     RUNNING("Бег","Все для бега"),
     VOLLEYBALL("Волейбол", "Магазин волейбольных товаров"),
