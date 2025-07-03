@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$;
 
-public class FilterPage extends BasePage {
+public class FilterPage {
 
     private final ElementsCollection brandFilters = $$("form[name=catalogFilterForm] div.catalog-filter-block:nth-child(2) div.catalog-filter-row");
     private final ElementsCollection productList = $$("div[data-name=productViewCatalog] div.products-view-block");

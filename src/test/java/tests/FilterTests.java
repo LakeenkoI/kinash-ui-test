@@ -1,22 +1,28 @@
 package tests;
 
 import data.GeneralMenuElements;
-import extensions.Retry;
+import io.qameta.allure.Owner;
 import io.qameta.allure.junit5.AllureJunit5;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pages.FilterPage;
 import pages.MainPage;
+
+import static pages.CoreElementsPage.clickGeneralMenuElements;
 
 @ExtendWith(AllureJunit5.class)
 public class FilterTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     FilterPage filterPage = new FilterPage();
-    @Retry(3)
     @Test
+    @DisplayName("В названии отфильтрованных товаров содержится название бренда из фильтра")
+    @Owner("lakeenkoi")
+    @Tag("Filter")
     public void filterTest() {
-        mainPage.clickGeneralMenuElements(GeneralMenuElements.CLOTHING);
+        clickGeneralMenuElements(GeneralMenuElements.CLOTHING);
         String brand = filterPage.getFirstBrandName();
         filterPage.selectFirstBrand()
                 .applyFilter()
