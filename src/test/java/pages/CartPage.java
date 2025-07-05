@@ -1,11 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -14,7 +14,7 @@ public class CartPage  {
     private final SelenideElement addToCartButton = $("a.btn.btn-middle.btn-confirm");
     private final SelenideElement clearCartButton = $(".icon-cancel-circled-before.link-text-decoration-none.cs-l-3");
     private final ElementsCollection productList = $$("div.products-view-block");
-    private final SelenideElement goToCartButton = $("a.cart-mini-header");
+    private final SelenideElement goToCartButton = $("div.modal-content a.btn-middle.btn-buy");
     private final SelenideElement cartCounter = $(".cart-amount-custom");
 
 
@@ -32,7 +32,8 @@ public class CartPage  {
 
     @Step("Переходим в корзину")
     public CartPage goToCart() {
-        goToCartButton.shouldBe(visible).click();
+        Configuration.timeout = 10000;
+        goToCartButton.shouldBe(clickable).click();
         return this;
     }
 
