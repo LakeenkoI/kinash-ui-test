@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import config.WebDriverConfig;
+import extensions.FailedResultListenerExtension;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,7 +18,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-@ExtendWith(TestResultListener.class)
+@ExtendWith(FailedResultListenerExtension.class)
 public class TestBase {
 
     private static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
@@ -26,18 +27,16 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         Configuration.timeout = 7000;
-        Configuration.browser = webDriverConfig.browser();
-        Configuration.browserVersion = webDriverConfig.browserVersion();
-        Configuration.browserSize = webDriverConfig.browserSize();
+        Configuration.browser = System.getProperty("browser", webDriverConfig.browser());
+        Configuration.browserVersion = System.getProperty("browserVersion", webDriverConfig.browserVersion());
+        Configuration.browserSize = System.getProperty("browserSize", webDriverConfig.browserSize());
         Configuration.baseUrl = webDriverConfig.baseUrl();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         nikeTShirtUrl = baseUrl + "/products/nike-dri-fit-uv-miler-short-sleave-running-top-futbolka-begovaya-chernyi";
 
-        boolean isRemote = webDriverConfig.isRemote();
+        boolean isRemote = Boolean.parseBoolean(System.getProperty("isRemote", String.valueOf(webDriverConfig.isRemote())));
         if (isRemote) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setBrowserName(webDriverConfig.browser());
-            capabilities.setVersion(webDriverConfig.browserVersion());
 
             Map<String, Object> selenoidOptions = new HashMap<>();
             selenoidOptions.put("enableVNC", true);
