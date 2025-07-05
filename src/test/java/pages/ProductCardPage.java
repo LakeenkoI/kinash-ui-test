@@ -6,26 +6,19 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProductCardPage {
 
     private final SelenideElement reviewsTab = $("li#tabReviews");
-    private final SelenideElement reviewButton = $("a.review-form-btn-add");
+    private final SelenideElement reviewButton = $("div a.review-form-btn-add");
     private final SelenideElement characteristicsTab = $("li#tabOptions");
     private final ElementsCollection characteristicsSection = $$("div.properties-item-name");
     private final SelenideElement firstProduct = $$("div.products-view-block").first();
 
-    @Step("Скроллим до блока 'Отзывы'")
-    public ProductCardPage scrollToReviews() {
-        reviewsTab.scrollIntoView(true);
-        return this;
-    }
-
     @Step("Кликаем на таб 'Отзывы'")
     public ProductCardPage clickReviewsTab() {
-        reviewsTab.shouldBe(appear).click();
+        reviewsTab.shouldBe(clickable).click();
         return this;
     }
 
