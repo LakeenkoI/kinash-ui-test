@@ -21,8 +21,6 @@ import static pages.CoreElementsPage.clickGeneralMenuElements;
 @Tag("ProductCart")
 public class ProductCardTests extends TestBase {
 
-    ProductCardPage productCard = new ProductCardPage();
-
     @Test
     @DisplayName("На карточке товара отображаются отзывы и кнопка Написать отзыв")
     public void checkReviewsSection() {

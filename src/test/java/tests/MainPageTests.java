@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pages.MainPage;
 
 
 @ExtendWith(AllureJunit5.class)
@@ -18,11 +17,9 @@ import pages.MainPage;
 @Tag("Main")
 public class MainPageTests extends TestBase {
 
-    MainPage page = new MainPage();
-
     @Test
     @DisplayName("На главное странице отображаются: корзина, футтер, лого, тайтл")
     public void mainPageElementsTest() {
-        page.checkMainPageElements();
+        mainPage.checkMainPageElements();
     }
 }

@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import pages.SearchPage;
 
 @ExtendWith(AllureJunit5.class)
 @Owner("LakeenkoI")
@@ -25,8 +24,7 @@ public class SearchTests extends TestBase {
             "?????,Ничего не найдено"
     })
     public void searchTest(String request, String expectedText) {
-        SearchPage page = new SearchPage();
-        page.setRequest(request)
+        searchPage.setRequest(request)
                 .search()
                 .checkResults(expectedText);
     }

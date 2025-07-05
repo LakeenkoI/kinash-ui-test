@@ -21,8 +21,6 @@ import static pages.CoreElementsPage.clickGeneralMenuElements;
 @Tag("Filter")
 public class FilterTests extends TestBase {
 
-    MainPage mainPage = new MainPage();
-    FilterPage filterPage = new FilterPage();
     @Test
     @DisplayName("В названии отфильтрованных товаров содержится название бренда из фильтра")
     public void filterTest() {

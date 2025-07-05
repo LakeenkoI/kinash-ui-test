@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,6 +21,12 @@ import static io.qameta.allure.Allure.step;
 
 @ExtendWith(FailedResultListenerExtension.class)
 public class TestBase {
+
+    protected CartPage cartPage = new CartPage();
+    protected FilterPage filterPage = new FilterPage();
+    protected MainPage mainPage = new MainPage();
+    protected ProductCardPage productCard = new ProductCardPage();
+    protected SearchPage searchPage = new SearchPage();
 
     private static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     public static String nikeTShirtUrl;

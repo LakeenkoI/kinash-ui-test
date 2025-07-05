@@ -20,8 +20,6 @@ import static pages.CoreElementsPage.clickGeneralMenuElements;
 @Tag("Cart")
 public class CartTests extends TestBase {
 
-    CartPage cartPage = new CartPage();
-
     @Test
     @DisplayName("Добавление товара в корзину")
     public void addToCartTest() {
