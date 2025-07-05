@@ -53,7 +53,7 @@ test {
     }
     retry {
         failOnPassedAfterRetry = false
-        maxRetries = 3
+        maxRetries = 1
     }
 }
 tasks.withType(Test) {
