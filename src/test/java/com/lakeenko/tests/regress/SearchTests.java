@@ -1,5 +1,6 @@
-package tests;
+package com.lakeenko.tests.regress;
 
+import com.lakeenko.tests.TestBase;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;

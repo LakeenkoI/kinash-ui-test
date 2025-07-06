@@ -1,6 +1,7 @@
-package tests;
+package com.lakeenko.tests.regress;
 
-import data.GeneralMenuElements;
+import com.lakeenko.data.GeneralMenuElements;
+import com.lakeenko.tests.TestBase;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
@@ -9,10 +10,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pages.FilterPage;
-import pages.MainPage;
 
-import static pages.CoreElementsPage.clickGeneralMenuElements;
+import static com.lakeenko.pages.components.CoreElementsPage.clickGeneralMenuElements;
 
 @ExtendWith(AllureJunit5.class)
 @Owner("LakeenkoI")

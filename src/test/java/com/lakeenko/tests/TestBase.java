@@ -1,16 +1,17 @@
-package tests;
+package com.lakeenko.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.WebDriverConfig;
-import extensions.FailedResultListenerExtension;
+import com.lakeenko.config.WebDriverConfig;
+import com.lakeenko.extensions.FailedResultListenerExtension;
+import com.lakeenko.listeners.CustomSelenideListener;
+import com.lakeenko.pages.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,6 +54,7 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = webDriverConfig.remoteUrl();
         }
+        CustomSelenideListener.register();
     }
 
     @BeforeEach

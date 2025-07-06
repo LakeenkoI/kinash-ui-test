@@ -1,4 +1,4 @@
-package data;
+package com.lakeenko.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

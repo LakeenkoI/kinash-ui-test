@@ -1,10 +1,10 @@
-package extensions;
+package com.lakeenko.extensions;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static helpers.Attach.*;
+import static com.lakeenko.helpers.AllureAttach.*;
 
 public class FailedResultListenerExtension implements TestWatcher {
 

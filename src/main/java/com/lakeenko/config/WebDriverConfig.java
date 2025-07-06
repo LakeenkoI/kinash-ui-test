@@ -1,4 +1,4 @@
-package config;
+package com.lakeenko.config;
 
 import org.aeonbits.owner.Config;
 

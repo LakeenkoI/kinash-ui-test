@@ -1,7 +1,7 @@
-package pages;
+package com.lakeenko.pages.components;
 
 import com.codeborne.selenide.ElementsCollection;
-import data.GeneralMenuElements;
+import com.lakeenko.data.GeneralMenuElements;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;

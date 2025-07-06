@@ -1,4 +1,4 @@
-package config;
+package com.lakeenko.config;
 
 import java.io.FileInputStream;
 import java.io.IOException;
