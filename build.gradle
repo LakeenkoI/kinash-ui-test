@@ -2,51 +2,62 @@ plugins {
     id 'java'
     id 'io.freefair.lombok' version "8.10"
     id "io.qameta.allure" version "2.12.0"
-    id 'org.gradle.test-retry' version '1.5.3'
+    id 'org.gradle.test-retry' version '1.6.2'
 }
 
-group = 'org.lakeenko'
+group = 'com.lakeenko'
 version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-compileJava.options.encoding = 'UTF-8'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+def versions = [
+        selenide: '7.9.3',
+        junitBom: '5.13.3',
+        allure  : '2.27.0',
+        owner   : '1.0.4',
+        assertj : '3.27.3',
+]
 
 allure {
     report {
-        version.set("2.24.0")
+        version.set(versions.allure)
     }
-
     adapter {
         aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion.set("2.24.0")
+                adapterVersion.set(versions.allure)
             }
         }
     }
 }
 
-tasks.withType(JavaCompile) {
+dependencies {
+    implementation(
+            "com.codeborne:selenide:${versions.selenide}",
+            "org.aeonbits.owner:owner:${versions.owner}",
+            "org.assertj:assertj-core:${versions.assertj}",
+            "io.qameta.allure:allure-selenide:${versions.allure}",
+            platform("org.junit:junit-bom:${versions.junitBom}"),
+            "org.junit.jupiter:junit-jupiter")
+    testImplementation(
+            "io.qameta.allure:allure-junit5:${versions.allure}")
+}
+
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
-dependencies  {
-    testImplementation 'com.codeborne:selenide:7.9.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
-    testImplementation 'io.qameta.allure:allure-junit5:2.25.0'
-    testImplementation 'org.junit-pioneer:junit-pioneer:2.2.0'
-    testImplementation 'org.aeonbits.owner:owner:1.0.4'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.13.1'
-    testImplementation 'io.opentelemetry:opentelemetry-semconv:1.30.1-alpha'
-    testImplementation 'org.assertj:assertj-core:3.27.3'
-    testImplementation 'io.qameta.allure:allure-selenide:2.24.0'
-
-}
-
-test {
+tasks.withType(Test).configureEach {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
@@ -55,19 +66,18 @@ test {
         failOnPassedAfterRetry = false
         maxRetries = 1
     }
-}
-tasks.withType(Test) {
-    systemProperties(System.getProperties())
-    useJUnitPlatform()
 
-    systemProperties += [
-            'junit.jupiter.execution.parallel.enabled'                 : System.getProperty("parallelRun", "false"),
-            'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
-            'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-            'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-            'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads", "3").toInteger()
-    ]
+    if (Boolean.parseBoolean(System.getProperty('parallelRun', 'false'))) {
+        systemProperties += [
+                'junit.jupiter.execution.parallel.enabled'                 : 'true',
+                'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
+                'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
+                'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads", "2").toInteger()
+        ]
+    }
 }
+
 task cart_tests(type: Test) {
     useJUnitPlatform {
         includeTags "Cart"
