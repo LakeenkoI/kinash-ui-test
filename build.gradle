@@ -78,32 +78,27 @@ tasks.withType(Test).configureEach {
     }
 }
 
-task cart_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "Cart"
-    }
+def testTags = [
+        "Smoke",
+        "Regression",
+        "Cart",
+        "Filter",
+        "Main",
+        "ProductCart",
+        "Search"
+]
+
+static String toSnakeCase(String input) {
+    input.replaceAll(/([a-z])([A-Z])/, '$1_$2').toLowerCase()
 }
 
-task filter_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "Filter"
-    }
-}
-
-task main_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "Main"
-    }
-}
-
-task product_cart_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "ProductCart"
-    }
-}
-
-task search_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "Search"
+testTags.each { tag ->
+    def taskName = "${toSnakeCase(tag)}_tests"
+    tasks.register(taskName, Test) {
+        useJUnitPlatform {
+            includeTags tag
+        }
+        group = "verification"
+        description = "Run tests with @Tag('$tag')"
     }
 }
