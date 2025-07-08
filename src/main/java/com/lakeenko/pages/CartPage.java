@@ -15,7 +15,7 @@ public class CartPage  {
     private final SelenideElement clearCartButton = $(".icon-cancel-circled-before.link-text-decoration-none.cs-l-3");
     private final ElementsCollection productList = $$("div.products-view-block");
     private final SelenideElement goToCartButton = $("div.modal-content a.btn-middle.btn-buy");
-    private final SelenideElement cartCounter = $(".cart-amount-custom");
+    private final SelenideElement cartCounter = $(".cart-amount-custom1");
 
 
     @Step("Кликаем по первому товару в списке")

@@ -42,6 +42,6 @@ public class CartTests extends TestBase {
                 .addToCart()
                 .goToCart()
                 .clearCart()
-                .checkCartCounterEquals(1);
+                .checkCartCounterEquals(0);
     }
 }
