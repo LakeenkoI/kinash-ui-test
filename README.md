@@ -1,4 +1,4 @@
-# UI Автотесты для [интернет-магазина Kinash.ru'](https://kinash.ru/)
+# UI Автотесты для [интернет-магазина Kinash.ru](https://kinash.ru/)
 &nbsp;
 ![сайт Kinash.ru](https://github.com/LakeenkoI/sourceItems/blob/main/source/kinash_mainPage.png)
 
