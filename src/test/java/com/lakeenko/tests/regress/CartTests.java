@@ -44,6 +44,5 @@ public class CartTests extends TestBase {
                 .goToCart()
                 .clearCart()
                 .checkCartCounterEquals(0);
-        addVideo();
     }
 }
