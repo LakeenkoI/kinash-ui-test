@@ -19,7 +19,7 @@ public class SearchPage {
         return this;
     }
 
-    @Step("Выполнение поиска по запросу: {request}")
+    @Step("Выполнение поиска по запросу")
     public SearchPage search() {
         searchField.setValue(request);
         searchBtn.click();
