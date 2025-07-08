@@ -14,17 +14,8 @@ public class CustomSelenideListener implements LogEventListener {
 
     @Override
     public void beforeEvent(LogEvent event) {
-        // ⏱️ сохраняем время начала действия
-        timers.put(event, System.nanoTime());
-
-        // 🟦 лог в Allure
         Allure.step("🔹 " + event.getSubject() + " → " + event.getElement());
-
-        // ⚠️ Предупреждение про подозрительный xpath
-        if (event.getElement().toLowerCase().contains("xpath") &&
-                event.getElement().contains("[")) {
-            System.out.println("⚠️  Подозрительный локатор с индексом: " + event.getElement());
-        }
+        System.out.println("➡️ Selenide step: " + event.getSubject() + " → " + event.getElement());
     }
 
     @Override
