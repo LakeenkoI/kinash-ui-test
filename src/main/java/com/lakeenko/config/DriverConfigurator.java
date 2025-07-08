@@ -30,6 +30,8 @@ public class DriverConfigurator {
             selenoidOptions.put("enableVNC", true);
             selenoidOptions.put("enableVideo", true);
             capabilities.setCapability("selenoid:options", selenoidOptions);
+            capabilities.setBrowserName(CONFIG.browser());
+            capabilities.setVersion(CONFIG.browserVersion());
 
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = CONFIG.remoteUrl();
