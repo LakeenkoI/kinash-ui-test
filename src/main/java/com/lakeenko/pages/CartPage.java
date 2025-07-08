@@ -15,18 +15,22 @@ public class CartPage  {
     private final SelenideElement clearCartButton = $(".icon-cancel-circled-before.link-text-decoration-none.cs-l-3");
     private final ElementsCollection productList = $$("div.products-view-block");
     private final SelenideElement goToCartButton = $("div.modal-content a.btn-middle.btn-buy");
-    private final SelenideElement cartCounter = $(".cart-amount-custom1");
+    private final SelenideElement cartCounter = $(".cart-amount-custom");
 
 
     @Step("Кликаем по первому товару в списке")
     public CartPage clickFirstProduct() {
-        productList.first().scrollIntoView(true).click();
+        productList
+                .first()
+                .scrollIntoView(true).click();
         return this;
     }
 
     @Step("Добавляем товар в корзину")
     public CartPage addToCart() {
-        addToCartButton.shouldBe(visible).click();
+        addToCartButton
+                .shouldBe(visible)
+                .click();
         return this;
     }
 
