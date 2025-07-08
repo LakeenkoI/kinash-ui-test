@@ -11,16 +11,17 @@ public class CustomElementNotFoundException extends AssertionError{
 
     private static String buildMessage(String action, String locator, String additionalInfo) {
         String currentUrl = getCurrentUrl();
-        return "\n" +
-                "┌───────────────────────────────────────────────────────────────┐\n" +
-                "│                       ❌ ELEMENT NOT FOUND                    │\n" +
-                "├───────────────────────────────────────────────────────────────┤\n" +
-                "│ 🔍 Action        : " + action + "\n" +
-                "│ 📌 Locator       : " + locator + "\n" +
-                "│ 🌍 Current URL   : " + currentUrl + "\n" +
-                (additionalInfo != null && !additionalInfo.isBlank() ?
-                        "│ 💡 Info          : " + additionalInfo + "\n" : "") +
-                "└───────────────────────────────────────────────────────────────┘\n";
+        StringBuilder sb = new StringBuilder("\n");
+        sb.append("❌ ELEMENT NOT FOUND\n");
+        sb.append("────────────────────────────\n");
+        sb.append("🔍 Action      : ").append(action).append("\n");
+        sb.append("📌 Locator     : ").append(locator).append("\n");
+        sb.append("🌍 Current URL : ").append(currentUrl).append("\n");
+        if (additionalInfo != null && !additionalInfo.isBlank()) {
+            sb.append("💡 Info        : ").append(additionalInfo).append("\n");
+        }
+        sb.append("────────────────────────────\n");
+        return sb.toString();
     }
 
     private static String getCurrentUrl() {
