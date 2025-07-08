@@ -11,7 +11,7 @@ public class ConfigProvider {
 
     static {
         if (System.getProperty("env") == null) {
-            System.setProperty("env", "remote");
+            System.setProperty("env", "local");
         }
         CONFIG = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     }
