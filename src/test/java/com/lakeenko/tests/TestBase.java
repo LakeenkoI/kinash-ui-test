@@ -23,6 +23,6 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         DriverConfigurator.configure();
-        attachAsText("BrowserRun", ConfigProvider.CONFIG.browser()));
+        attachAsText("BrowserRun", ConfigProvider.CONFIG.browser());
     }
 }
