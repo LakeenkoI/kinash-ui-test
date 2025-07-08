@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static com.lakeenko.helpers.AllureAttach.addVideo;
 import static com.lakeenko.pages.components.CoreElementsPage.clickGeneralMenuElements;
 
 @ExtendWith(AllureJunit5.class)
@@ -43,5 +44,6 @@ public class CartTests extends TestBase {
                 .goToCart()
                 .clearCart()
                 .checkCartCounterEquals(0);
+        addVideo();
     }
 }
