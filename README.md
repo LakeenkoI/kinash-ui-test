@@ -28,6 +28,7 @@
 - Очистка корзины
 - Проверка характеристик и отзывов в карточке товара
 ---
+
 ## Используемые технологии и инструменты
 <table>
 <tbody>
@@ -72,7 +73,6 @@ src
 
 ---
 
-&nbsp;
 ## Команды для запуска из терминала
 Локально должны быть заданы параметры в remote.properties 
 ### Запуск всех тестов на удалённом сервере:
@@ -91,8 +91,6 @@ gradle clean cart_tests -DparallelRun=true -Dthreads=4
 ```bash
 allure serve build/allure-results
 ```
-
-&nbsp;
 ## Параметры с помощью которых можно [запустить сборку в Jenkins](https://jenkins.autotests.cloud/job/kinash-ui-tests/build):
 ![Сборка Jenkins-параметры-1](https://github.com/LakeenkoI/sourceItems/blob/main/source/Parameters.png)
 
