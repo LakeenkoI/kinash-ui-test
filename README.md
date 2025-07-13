@@ -27,6 +27,7 @@
 - Добавление товара в корзину
 - Очистка корзины
 - Проверка характеристик и отзывов в карточке товара
+
 ---
 
 ## Используемые технологии и инструменты
@@ -91,6 +92,8 @@ gradle clean cart_tests -DparallelRun=true -Dthreads=4
 ```bash
 allure serve build/allure-results
 ```
+---
+
 ## Параметры с помощью которых можно [запустить сборку в Jenkins](https://jenkins.autotests.cloud/job/kinash-ui-tests/build):
 ![Сборка Jenkins-параметры-1](https://github.com/LakeenkoI/sourceItems/blob/main/source/Parameters.png)
 
@@ -105,11 +108,11 @@ allure serve build/allure-results
 - Консольными логами браузера
 - Видео (если `isRemote=true` и Selenoid)
 
----
 
-## Отчёт в [Allure Report](https://jenkins.autotests.cloud/job/kinash-ui-tests/17/allure/)
 ### Доска с аналитикой тестирования
 ![Allure Overview](https://github.com/LakeenkoI/sourceItems/blob/main/source/AllureOverview.png)
+
+---
 
 ## 🧠 Особенности проекта
 
@@ -123,7 +126,8 @@ allure serve build/allure-results
 ### Пример автоматизированного тест кейса
 ![Allure Behaviors](https://github.com/LakeenkoI/sourceItems/blob/main/source/TestExample.png)
 
-&nbsp;
+---
+
 ## Видео прохождение тестов из Selenoid
 - Добавление товара в корзину и дальнейшая ее очистка
 ![cecc45885c9d83c248ce0c005f115492](https://github.com/LakeenkoI/sourceItems/blob/main/source/cecc45885c9d83c248ce0c005f115492.gif)
