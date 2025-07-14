@@ -19,7 +19,6 @@ public class TestBase {
     protected ProductCardPage productCard = new ProductCardPage();
     protected SearchPage searchPage = new SearchPage();
 
-    @SneakyThrows
     @BeforeAll
     static void setup() {
         DriverConfigurator.configure();
