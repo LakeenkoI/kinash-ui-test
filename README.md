@@ -43,17 +43,17 @@
 <table>
 <tbody>
 <tr>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Intelij_IDEA.svg" width="40" height="40"><br>IntelliJ IDEA</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Java.svg" width="40" height="40"><br>Java</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Gradle.svg" width="40" height="40"><br>Gradle</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/JUnit5.svg" width="40" height="40"><br>JUnit5</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Selenide.svg" width="40" height="40"><br>Selenide</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Selenoid.svg" width="40" height="40"><br>Selenoid</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Intelij_IDEA.svg" width="40" height="40"><br>IntelliJ IDEA</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Java.svg" width="40" height="40"><br>Java</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Gradle.svg" width="40" height="40"><br>Gradle</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/JUnit5.svg" width="40" height="40"><br>JUnit5</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Selenide.svg" width="40" height="40"><br>Selenide</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Selenoid.svg" width="40" height="40"><br>Selenoid</td>
 </tr>
 <tr>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Jenkins.svg" width="40" height="40"><br>Jenkins</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Github.svg" width="40" height="40"><br>Github</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/sourceItems/blob/main/source/Allure.svg" width="40" height="40"><br>Allure Report</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Jenkins.svg" width="40" height="40"><br>Jenkins</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Github.svg" width="40" height="40"><br>Github</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Allure.svg" width="40" height="40"><br>Allure Report</td>
 </tr>
 </tbody>
 </table>
@@ -104,7 +104,7 @@ allure serve build/allure-results
 ---
 
 ## Параметры с помощью которых можно [запустить сборку в Jenkins](https://jenkins.autotests.cloud/job/kinash-ui-tests/build):
-![Сборка Jenkins-параметры-1](https://github.com/LakeenkoI/sourceItems/blob/main/source/Parameters.png)
+![Сборка Jenkins-параметры-1](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Parameters.png)
 
 ---
 
@@ -119,15 +119,15 @@ allure serve build/allure-results
 
 
 ### Доска с аналитикой тестирования
-![Allure Overview](https://github.com/LakeenkoI/sourceItems/blob/main/source/AllureOverview.png)
+![Allure Overview](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/AllureOverview.png)
 
 ---
 
 ### Пример автоматизированного тест кейса
-![Allure Behaviors](https://github.com/LakeenkoI/sourceItems/blob/main/source/TestExample.png)
+![Allure Behaviors](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/TestExample.png)
 
 ---
 
 ## Видео прохождение тестов из Selenoid
 - Добавление товара в корзину и дальнейшая ее очистка
-![cecc45885c9d83c248ce0c005f115492](https://github.com/LakeenkoI/sourceItems/blob/main/source/cecc45885c9d83c248ce0c005f115492.gif)
+![cecc45885c9d83c248ce0c005f115492](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/cecc45885c9d83c248ce0c005f115492.gif)
