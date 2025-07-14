@@ -1,6 +1,6 @@
 # UI Автотесты для [интернет-магазина Kinash.ru](https://kinash.ru/)
 &nbsp;
-![сайт Kinash.ru](https://github.com/LakeenkoI/sourceItems/blob/main/source/kinash_mainPage.png)
+![сайт Kinash.ru](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/kinash_mainPage.png)
 
 Этот проект представляет собой масштабируемую и гибко настраиваемую систему автотестирования пользовательского интерфейса интернет-магазина, разработанную с акцентом на читаемость, поддержку и расширяемость. Проект демонстрирует глубокую интеграцию с современным стеком инструментов автоматизации и подходит как для локального запуска, так и для CI/CD окружений.
 
