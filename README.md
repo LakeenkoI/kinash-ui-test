@@ -1,6 +1,6 @@
 # UI Автотесты для [интернет-магазина Kinash.ru](https://kinash.ru/)
 &nbsp;
-![сайт Kinash.ru](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/kinash_mainPage.png)
+![сайт Kinash.ru](https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/kinash_mainPage.png)
 
 Этот проект представляет собой масштабируемую и гибко настраиваемую систему автотестирования пользовательского интерфейса интернет-магазина, разработанную с акцентом на читаемость, поддержку и расширяемость. Проект демонстрирует глубокую интеграцию с современным стеком инструментов автоматизации и подходит как для локального запуска, так и для CI/CD окружений.
 
@@ -43,17 +43,17 @@
 <table>
 <tbody>
 <tr>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Intelij_IDEA.svg" width="40" height="40"><br>IntelliJ IDEA</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Java.svg" width="40" height="40"><br>Java</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Gradle.svg" width="40" height="40"><br>Gradle</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/JUnit5.svg" width="40" height="40"><br>JUnit5</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Selenide.svg" width="40" height="40"><br>Selenide</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Selenoid.svg" width="40" height="40"><br>Selenoid</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Intelij_IDEA.svg" width="40" height="40"><br>IntelliJ IDEA</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Java.svg" width="40" height="40"><br>Java</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Gradle.svg" width="40" height="40"><br>Gradle</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/JUnit5.svg" width="40" height="40"><br>JUnit5</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Selenide.svg" width="40" height="40"><br>Selenide</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Selenoid.svg" width="40" height="40"><br>Selenoid</td>
 </tr>
 <tr>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Jenkins.svg" width="40" height="40"><br>Jenkins</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Github.svg" width="40" height="40"><br>Github</td>
-<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Allure.svg" width="40" height="40"><br>Allure Report</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Jenkins.svg" width="40" height="40"><br>Jenkins</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Github.svg" width="40" height="40"><br>Github</td>
+<td align="center"><src="https://www.jetbrains.com/idea/"><img src="https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Allure.svg" width="40" height="40"><br>Allure Report</td>
 </tr>
 </tbody>
 </table>
@@ -104,7 +104,7 @@ allure serve build/allure-results
 ---
 
 ## Параметры с помощью которых можно [запустить сборку в Jenkins](https://jenkins.autotests.cloud/job/kinash-ui-tests/build):
-![Сборка Jenkins-параметры-1](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/Parameters.png)
+![Сборка Jenkins-параметры-1](https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/Parameters.png)
 
 ---
 
@@ -119,15 +119,15 @@ allure serve build/allure-results
 
 
 ### Доска с аналитикой тестирования
-![Allure Overview](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/AllureOverview.png)
+![Allure Overview](https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/AllureOverview.png)
 
 ---
 
 ### Пример автоматизированного тест кейса
-![Allure Behaviors](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/TestExample.png)
+![Allure Behaviors](https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/TestExample.png)
 
 ---
 
 ## Видео прохождение тестов из Selenoid
 - Добавление товара в корзину и дальнейшая ее очистка
-![cecc45885c9d83c248ce0c005f115492](https://github.com/LakeenkoI/LakeenkoI/blob/main/Attachments/cecc45885c9d83c248ce0c005f115492.gif)
+![cecc45885c9d83c248ce0c005f115492](https://github.com/LakeenkoI/LakeenkoI/blob/main/attachments/cecc45885c9d83c248ce0c005f115492.gif)
